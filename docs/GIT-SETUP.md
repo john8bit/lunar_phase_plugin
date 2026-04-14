@@ -24,7 +24,7 @@ git config user.name "john8bit"
 Create a new empty GitHub repository under the `john8bit` account. Suggested repository name:
 
 ```text
-lunar_phase_plugin
+celestial-lunar-phase
 ```
 
 Do not initialize it with a README, .gitignore, or license if you plan to push this package as-is.
@@ -34,14 +34,14 @@ Do not initialize it with a README, .gitignore, or license if you plan to push t
 Replace the URL below with your final repository URL if it differs:
 
 ```bash
-git remote add origin https://github.com/john8bit/lunar_phase_plugin.git
+git remote add origin https://github.com/john8bit/celestial-lunar-phase.git
 ```
 
 ## First commit and push
 
 ```bash
 git add .
-git commit -m "Initial commit: Lunar Phase Stock Widget repository"
+git commit -m "Initial commit: Celestial Lunar Phase Widget repository"
 git push -u origin main
 ```
 

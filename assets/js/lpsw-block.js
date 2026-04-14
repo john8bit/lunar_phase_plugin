@@ -7,11 +7,11 @@
 	const ServerSideRender = serverSideRender;
 
 	registerBlockType( 'celestial-web-development/lunar-phase-widget', {
-		title: __( 'Lunar Phase Widget', 'lunar-phase-stock-widget' ),
-		description: __( 'Display the current moon phase with a phase image, moonrise, and moonset.', 'lunar-phase-stock-widget' ),
+		title: __( 'Celestial Lunar Phase', 'celestial-lunar-phase' ),
+		description: __( 'Display the current moon phase with a phase image, moonrise, and moonset.', 'celestial-lunar-phase' ),
 		icon: 'moon',
 		category: 'widgets',
-		keywords: [ __( 'moon', 'lunar-phase-stock-widget' ), __( 'astronomy', 'lunar-phase-stock-widget' ), __( 'moonrise', 'lunar-phase-stock-widget' ) ],
+		keywords: [ __( 'moon', 'celestial-lunar-phase' ), __( 'astronomy', 'celestial-lunar-phase' ), __( 'moonrise', 'celestial-lunar-phase' ) ],
 		attributes: {
 			location: { type: 'string', default: '' },
 			date: { type: 'string', default: '' },
@@ -23,32 +23,32 @@
 			const attrs = props.attributes;
 			return el( Fragment, {},
 				el( InspectorControls, {},
-					el( PanelBody, { title: __( 'Widget Settings', 'lunar-phase-stock-widget' ), initialOpen: true },
+					el( PanelBody, { title: __( 'Widget Settings', 'celestial-lunar-phase' ), initialOpen: true },
 						el( TextControl, {
-							label: __( 'Location Override', 'lunar-phase-stock-widget' ),
-							help: __( 'Leave blank to use the plugin default location.', 'lunar-phase-stock-widget' ),
+							label: __( 'Location Override', 'celestial-lunar-phase' ),
+							help: __( 'Leave blank to use the plugin default location.', 'celestial-lunar-phase' ),
 							value: attrs.location,
 							onChange: function ( value ) { props.setAttributes( { location: value } ); },
 						} ),
 						el( TextControl, {
-							label: __( 'Date Override', 'lunar-phase-stock-widget' ),
-							help: __( 'Format: YYYY-MM-DD. Leave blank to use today.', 'lunar-phase-stock-widget' ),
+							label: __( 'Date Override', 'celestial-lunar-phase' ),
+							help: __( 'Format: YYYY-MM-DD. Leave blank to use today.', 'celestial-lunar-phase' ),
 							value: attrs.date,
 							onChange: function ( value ) { props.setAttributes( { date: value } ); },
 						} ),
 						el( TextControl, {
-							label: __( 'Custom Title', 'lunar-phase-stock-widget' ),
-							help: __( 'Leave blank to use the default title from plugin settings.', 'lunar-phase-stock-widget' ),
+							label: __( 'Custom Title', 'celestial-lunar-phase' ),
+							help: __( 'Leave blank to use the default title from plugin settings.', 'celestial-lunar-phase' ),
 							value: attrs.title,
 							onChange: function ( value ) { props.setAttributes( { title: value } ); },
 						} ),
 						el( ToggleControl, {
-							label: __( 'Show Location Label', 'lunar-phase-stock-widget' ),
+							label: __( 'Show Location Label', 'celestial-lunar-phase' ),
 							checked: attrs.showLocation,
 							onChange: function ( value ) { props.setAttributes( { showLocation: value } ); },
 						} ),
 						el( ToggleControl, {
-							label: __( 'Show Data Credit', 'lunar-phase-stock-widget' ),
+							label: __( 'Show Data Credit', 'celestial-lunar-phase' ),
 							checked: attrs.showCredit,
 							onChange: function ( value ) { props.setAttributes( { showCredit: value } ); },
 						} )

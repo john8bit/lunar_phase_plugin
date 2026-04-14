@@ -6,9 +6,9 @@ This repository currently reflects the uploaded source package.
 
 Current values in source:
 
-- Plugin Name: `Lunar Phase Stock Widget`
-- Text Domain: `lunar-phase-stock-widget`
-- Main plugin file: `lunar-phase-stock-widget.php`
+- Plugin Name: `Celestial Lunar Phase Widget`
+- Text Domain: `celestial-lunar-phase`
+- Main plugin file: `celestial-lunar-phase.php`
 
 ## If you rebrand the plugin
 

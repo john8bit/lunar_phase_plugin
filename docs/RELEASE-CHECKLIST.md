@@ -20,7 +20,7 @@ From the repository root:
 ```bash
 cd "/g/My Drive/CelestialWebDevelopment/git_repo/lunar_phase_plugin"
 mkdir -p ../build
-powershell -Command "Compress-Archive -Path * -DestinationPath ../build/lunar-phase-stock-widget.zip -Force"
+powershell -Command "Compress-Archive -Path * -DestinationPath ../build/celestial-lunar-phase.zip -Force"
 ```
 
 For WordPress.org submissions, confirm the ZIP contains the plugin files at the root level expected by WordPress.

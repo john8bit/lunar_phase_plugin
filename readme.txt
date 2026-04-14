@@ -1,4 +1,4 @@
-=== Lunar Phase Stock Widget ===
+=== Celestial Lunar Phase Widget ===
 Contributors: johnfoo
 Tags: moon phase, astronomy, moonrise, moonset, gutenberg block
 Requires at least: 5.8
@@ -12,7 +12,7 @@ Display the current moon phase with a bundled moon image, moonrise, moonset, ill
 
 == Description ==
 
-Lunar Phase Stock Widget helps WordPress sites display the current moon phase in a polished astronomy card.
+Celestial Lunar Phase Widget helps WordPress sites display the current moon phase in a polished astronomy card.
 
 The plugin shows:
 
@@ -37,7 +37,7 @@ It includes both a classic shortcode and a Gutenberg block, so site owners can a
 = Key features =
 
 * Shortcode: `[lunar_phase_widget]`
-* Gutenberg block: **Lunar Phase Widget**
+* Gutenberg block: **Celestial Lunar Phase Widget**
 * Eight bundled moon phase photos packaged locally
 * Default location and title settings
 * 12-hour or 24-hour time display
@@ -53,10 +53,10 @@ https://celestialwebdevelopment.com/lunar-phase-plugin/
 
 1. Upload the plugin folder to `/wp-content/plugins/` or install the ZIP from **Plugins > Add New > Upload Plugin**.
 2. Activate the plugin.
-3. Go to **Settings > Lunar Phase Widget**.
+3. Go to **Settings > Celestial Lunar Phase**.
 4. Enter your WeatherAPI key.
 5. Set a default location.
-6. Add the **Lunar Phase Widget** block or place `[lunar_phase_widget]` into a post, page, or widget area.
+6. Add the **Celestial Lunar Phase Widget** block or place `[lunar_phase_widget]` into a post, page, or widget area.
 
 == Frequently Asked Questions ==
 
@@ -88,7 +88,7 @@ https://celestialwebdevelopment.com/lunar-phase-plugin/
 
 == Blocks ==
 
-= Lunar Phase Widget =
+= Celestial Lunar Phase Widget =
 
 Display the current moon phase with a bundled moon image, phase name, moonrise, moonset, and illumination.
 

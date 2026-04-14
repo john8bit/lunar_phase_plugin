@@ -1,4 +1,4 @@
-# Lunar Phase Stock Widget
+# Celestial Lunar Phase Widget
 
 A WordPress plugin that displays the current lunar phase with a bundled moon image, phase name, moonrise, moonset, and illumination using WeatherAPI astronomy data.
 
@@ -29,7 +29,7 @@ lunar_phase_plugin/
 │   └── WORDPRESS-ORG-NOTES.md
 ├── assets/                  # Created by the plugin package when present
 ├── CREDITS.txt
-├── lunar-phase-stock-widget.php
+├── celestial-lunar-phase.php
 ├── readme.txt               # WordPress.org readme
 ├── LICENSE
 ├── .gitignore
@@ -45,8 +45,8 @@ lunar_phase_plugin/
 ## Local Development
 
 1. Copy this plugin folder into your local WordPress install under `wp-content/plugins/`.
-2. Activate **Lunar Phase Stock Widget** in the WordPress admin.
-3. Go to **Settings > Lunar Phase Widget**.
+2. Activate **Celestial Lunar Phase Widget** in the WordPress admin.
+3. Go to **Settings > Celestial Lunar Phase**.
 4. Add your WeatherAPI key and default location.
 
 ## GitHub Workflow

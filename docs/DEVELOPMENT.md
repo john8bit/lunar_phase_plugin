@@ -2,7 +2,7 @@
 
 ## Main plugin file
 
-- `lunar-phase-stock-widget.php`
+- `celestial-lunar-phase.php`
 
 ## Primary areas of functionality
 
@@ -24,7 +24,7 @@
 
 Update the following together when making a release:
 
-- `Version:` in `lunar-phase-stock-widget.php`
+- `Version:` in `celestial-lunar-phase.php`
 - `const VERSION`
 - `Stable tag:` in `readme.txt`
 - `Changelog` in `readme.txt`
