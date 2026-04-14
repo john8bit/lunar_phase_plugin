@@ -1,0 +1,93 @@
+.lpsw-card {
+	max-width: 420px;
+	background: linear-gradient(180deg, #0e1628 0%, #121d34 100%);
+	color: #ffffff;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+	border: 1px solid rgba(255,255,255,0.08);
+	font-family: inherit;
+}
+
+.lpsw-title {
+	padding: 16px 18px 0;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.lpsw-media {
+	padding: 18px 18px 10px;
+}
+
+.lpsw-media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 14px;
+	background: #000;
+}
+
+.lpsw-content {
+	padding: 4px 18px 18px;
+}
+
+.lpsw-phase {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 6px;
+}
+
+.lpsw-location {
+	font-size: 0.95rem;
+	color: rgba(255,255,255,0.78);
+	margin-bottom: 16px;
+}
+
+.lpsw-meta {
+	background: rgba(255,255,255,0.06);
+	border: 1px solid rgba(255,255,255,0.06);
+	border-radius: 14px;
+	padding: 12px 14px;
+}
+
+.lpsw-meta-row {
+	display: flex;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 8px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.lpsw-meta-row:last-child {
+	border-bottom: 0;
+}
+
+.lpsw-label {
+	color: rgba(255,255,255,0.72);
+	font-weight: 500;
+}
+
+.lpsw-value {
+	font-weight: 700;
+	text-align: right;
+}
+
+.lpsw-credit {
+	margin-top: 12px;
+	font-size: 0.82rem;
+	color: rgba(255,255,255,0.65);
+}
+
+.lpsw-credit a {
+	color: #cfe0ff;
+}
+
+.lpsw-notice {
+	padding: 14px 16px;
+	border-radius: 12px;
+	background: #fff8e1;
+	color: #5b4500;
+	border: 1px solid #f0d98a;
+}

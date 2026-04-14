@@ -1,0 +1,24 @@
+name: Build Release Zip
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create zip
+        run: |
+          zip -r lunar-phase-stock-widget-${GITHUB_REF_NAME}.zip . \
+            -x "*.git*" ".github/*" "docs/*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lunar-phase-stock-widget-${{ github.ref_name }}
+          path: lunar-phase-stock-widget-${{ github.ref_name }}.zip

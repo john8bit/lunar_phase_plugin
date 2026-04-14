@@ -1,0 +1,8 @@
+Lunar Phase Stock Widget
+
+Company: Celestial Web Development
+Website: https://celestialwebdevelopment.com/
+Support: https://celestialwebdevelopment.com/lunar-phase-plugin/
+
+Bundled phase images are included locally in this package.
+Moon data is retrieved from WeatherAPI when the widget is rendered.
