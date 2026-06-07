@@ -1,122 +1,150 @@
 === Celestial Lunar Phase Widget ===
 Contributors: johnfoo
-Tags: moon phase, astronomy, moonrise, moonset, gutenberg block
+Tags: moon phase, astronomy, moonrise, moonset, lunar phase, astronomical dawn, astronomical dusk, gutenberg block
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Display the current moon phase with a bundled moon image, moonrise, moonset, illumination, shortcode, and Gutenberg block.
+Display the current Moon phase with local astronomy calculations, moonrise, moonset, astronomical dawn/dusk, illumination, bundled images, shortcode, and a Gutenberg block.
 
 == Description ==
 
-Celestial Lunar Phase Widget helps WordPress sites display the current moon phase in a polished astronomy card.
+Celestial Lunar Phase Widget helps WordPress sites display the current Moon phase in a polished astronomy card.
 
 The plugin shows:
 
 * Current lunar phase name
 * Moonrise time
 * Moonset time
+* Astronomical dawn time
+* Astronomical dusk time
 * Illumination percentage
-* Bundled moon phase image matched to the returned phase
+* Bundled Moon phase image matched to the phase
 * Optional location label
-* Optional WeatherAPI credit line
+* Optional calculation/source note
 
-It includes both a classic shortcode and a Gutenberg block, so site owners can add lunar data in the editor or in traditional content areas.
-
-= Ideal for =
-
-* Astronomy and space science websites
-* Observing clubs and public outreach pages
-* Weather and nature blogs
-* Classroom and education sites
-* Hobbyist websites that want a live moon phase widget
+Version 2.2 removes the WeatherAPI dependency and calculates lunar and twilight information locally using the observing location configured in WordPress admin. It also improves setup with a location lookup tool, browser geolocation helper, and timezone dropdown.
 
 = Key features =
 
-* Shortcode: `[lunar_phase_widget]`
+* Local astronomy calculations; no API key required
+* Moonrise and moonset times
+* Astronomical dawn and dusk display
+* Current lunar phase and illumination percentage
+* Bundled Moon phase photos packaged locally
+* Location lookup helper for admin setup
+* Browser geolocation helper for admin setup
+* Timezone dropdown to prevent typos and date-shift errors
+* Latitude, longitude, timezone, and optional elevation settings
+* Shortcode: `[celestial_lunar_phase_widget]`
 * Gutenberg block: **Celestial Lunar Phase Widget**
-* Eight bundled moon phase photos packaged locally
-* Default location and title settings
 * 12-hour or 24-hour time display
 * Per-location and per-date caching for better performance
-* No visitor geolocation in the browser, so your API key stays server-side
+* Admin notice after update if location settings need to be completed
 
 = Support =
 
 Support and documentation are available at:
 https://celestialwebdevelopment.com/lunar-phase-plugin/
 
+== External Services ==
+
+This plugin performs all lunar phase, moonrise, moonset, astronomical dawn, and astronomical dusk calculations locally. It does not send visitor data to an astronomy API.
+
+The optional **Lookup Location** button on the admin settings page uses the OpenStreetMap Nominatim geocoding service to convert a place name into latitude and longitude. This lookup is only triggered by an administrator clicking the button in wp-admin. The query entered by the administrator is sent to Nominatim for geocoding. The service may receive the searched location text, your site's server IP address, and standard request metadata.
+
+Service provider: OpenStreetMap Nominatim
+Terms: https://operations.osmfoundation.org/policies/nominatim/
+Privacy: https://osmfoundation.org/wiki/Privacy_Policy
+
+The **Use My Current Location** button uses the browser's built-in geolocation prompt. Coordinates are only saved after the administrator clicks **Save Changes**.
+
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/` or install the ZIP from **Plugins > Add New > Upload Plugin**.
 2. Activate the plugin.
-3. Go to **Settings > Celestial Lunar Phase**.
-4. Enter your WeatherAPI key.
-5. Set a default location.
-6. Add the **Celestial Lunar Phase Widget** block or place `[lunar_phase_widget]` into a post, page, or widget area.
+3. Go to **Settings > Celestial Lunar Phase Widget**.
+4. Enter a city, state, address, or place name and click **Lookup Location**, or use **Use My Current Location**.
+5. Verify the timezone dropdown and save changes.
+6. Add the **Celestial Lunar Phase Widget** block or place `[celestial_lunar_phase_widget]` into a post, page, or widget area.
 
 == Frequently Asked Questions ==
 
-= Does the plugin include moon images? =
+= Does the plugin require an API key? =
 
-Yes. Eight moon phase images are bundled locally inside the plugin package.
+No. Version 2.2 calculates the Moon phase, moonrise, moonset, astronomical dawn, and astronomical dusk locally. No WeatherAPI key or external astronomy data service is required.
+
+= Why do I need latitude and longitude? =
+
+Moonrise, moonset, dawn, and dusk are location-specific. Version 2.2 uses the configured latitude, longitude, and timezone to calculate the correct local values. The settings page includes Location Lookup and Use My Current Location helpers to make this easier.
+
+= What happens when upgrading from an older API-based version? =
+
+After the update, WordPress admins will see a notice asking them to complete the new location settings. The widget will display a safe setup message until latitude, longitude, and timezone are saved. Use Location Lookup or Use My Current Location from the settings page.
+
+= Why might times differ from Timeanddate.com or other services? =
+
+Moonrise and moonset times can differ between services because of location precision, elevation, terrain/horizon assumptions, atmospheric refraction, and calculation methods.
+
+= Does the plugin include Moon images? =
+
+Yes. Eight Moon phase images are bundled locally inside the plugin package.
 
 = Does the plugin include a Gutenberg block? =
 
-Yes. Version 1.1.0 includes a dynamic Gutenberg block with editor controls for location, date, title, and display options.
-
-= Does the plugin need an API key? =
-
-Yes. The plugin uses WeatherAPI to retrieve moon phase, moonrise, moonset, and illumination data.
-
-= Does the plugin auto-detect each visitor location? =
-
-No. This version uses the saved default location or a block/shortcode override.
-
-= Where can I get support? =
-
-Support is available at:
-https://celestialwebdevelopment.com/lunar-phase-plugin/
+Yes. The plugin includes a dynamic Gutenberg block with editor controls for location label, date, title, and display options.
 
 == Screenshots ==
 
-1. Front-end widget showing the current lunar phase, location, moonrise, moonset, and illumination.
-2. Settings screen for WeatherAPI key, default location, time format, and shortcode examples.
-
-== Blocks ==
-
-= Celestial Lunar Phase Widget =
-
-Display the current moon phase with a bundled moon image, phase name, moonrise, moonset, and illumination.
-
-== External Services ==
-
-This plugin connects to the following external service:
-
-= WeatherAPI =
-
-* Service URL: `https://api.weatherapi.com/v1/astronomy.json`
-* What the service does: Returns moon phase, moonrise, moonset, and illumination data for the requested location and date.
-* When data is sent: Only when the block or shortcode is rendered and no cached response is available.
-* What data is sent: The site administrator's WeatherAPI key, the configured location or override location, and the selected date.
-* Service provider: WeatherAPI
-* Terms of use: `https://www.weatherapi.com/terms.aspx`
-* Privacy policy: `https://www.weatherapi.com/privacy.aspx`
-
-== Changelog ==
-
-= 1.1.0 =
-* Added a dynamic Gutenberg block with editor preview.
-* Added WordPress.org screenshot assets and improved submission readme.
-* Updated plugin author, support, and company branding to Celestial Web Development.
-
-= 1.0.0 =
-* Initial release.
+1. Frontend lunar phase widget display.
+2. Plugin settings screen.
 
 == Upgrade Notice ==
 
+= 2.2.0 =
+WeatherAPI has been removed. After updating, visit Settings > Celestial Lunar Phase Widget and use Location Lookup or Use My Current Location, then verify timezone and save settings.
+
+= 2.1.0 =
+WeatherAPI has been removed. After updating, visit Settings > Celestial Lunar Phase Widget and save latitude, longitude, and timezone for your observing location.
+
+== Changelog ==
+
+= 2.2.0 =
+* Added Location Lookup helper using OpenStreetMap Nominatim from the admin settings page.
+* Added timezone dropdown with common timezones and all IANA timezone identifiers.
+* Improved setup guidance and admin notice language for upgrades from API-based versions.
+* Kept local astronomy calculations only; WeatherAPI remains removed.
+
+= 2.1.0 =
+* Removed WeatherAPI mode and API key settings.
+* Added local-only astronomy calculations.
+* Added admin notice when latitude, longitude, or timezone settings are missing after update.
+* Kept browser geolocation helper for easier setup.
+* Updated branding and documentation for Celestial Web Development.
+
+= 2.0.9 =
+* Fixed local date handling for the configured observing timezone.
+* Shortened astronomical twilight labels to Dawn and Dusk.
+
+= 2.0.8 =
+* Improved moonrise and moonset calculations using a SunCalc-style algorithm.
+* Improved phase and illumination calculation.
+
+= 2.0.2 =
+* Added local calculation diagnostics and safer timezone handling.
+
+= 2.0.0 =
+* Added local astronomy calculation mode for moonrise and moonset.
+* Changed local sun times display to astronomical dawn and astronomical dusk.
+* Added latitude, longitude, timezone, and elevation settings.
+* Added browser geolocation helper in admin.
+
 = 1.1.0 =
-Adds a Gutenberg block, improved plugin metadata, and submission-ready screenshot support.
+* Added Gutenberg block support.
+* Added bundled WordPress.org assets and screenshots.
+
+= 1.0.0 =
+* Initial release.

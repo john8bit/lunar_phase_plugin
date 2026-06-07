@@ -55,7 +55,8 @@
 .lpsw-meta-row {
 	display: flex;
 	justify-content: space-between;
-	gap: 18px;
+	align-items: baseline;
+	gap: 16px;
 	padding: 8px 0;
 	border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -67,11 +68,14 @@
 .lpsw-label {
 	color: rgba(255,255,255,0.72);
 	font-weight: 500;
+	white-space: nowrap;
 }
 
 .lpsw-value {
 	font-weight: 700;
 	text-align: right;
+	white-space: nowrap;
+	line-height: 1.2;
 }
 
 .lpsw-credit {

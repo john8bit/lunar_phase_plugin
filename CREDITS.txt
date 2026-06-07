@@ -1,8 +1,11 @@
 Celestial Lunar Phase Widget
+Copyright (C) Celestial Web Development
+https://celestialwebdevelopment.com/
 
-Company: Celestial Web Development
-Website: https://celestialwebdevelopment.com/
-Support: https://celestialwebdevelopment.com/lunar-phase-plugin/
+This plugin is licensed under GPLv2 or later.
 
-Bundled phase images are included locally in this package.
-Moon data is retrieved from WeatherAPI when the widget is rendered.
+Moon phase images are bundled locally with the plugin package.
+Astronomical values are calculated locally by the plugin and do not require an external astronomy API.
+
+Optional admin Location Lookup uses OpenStreetMap Nominatim only when an administrator clicks the Lookup Location button.
+Nominatim policy: https://operations.osmfoundation.org/policies/nominatim/

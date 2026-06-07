@@ -7,7 +7,7 @@
 	const ServerSideRender = serverSideRender;
 
 	registerBlockType( 'celestial-web-development/lunar-phase-widget', {
-		title: __( 'Celestial Lunar Phase', 'celestial-lunar-phase' ),
+		title: __( 'Celestial Lunar Phase Widget', 'celestial-lunar-phase' ),
 		description: __( 'Display the current moon phase with a phase image, moonrise, and moonset.', 'celestial-lunar-phase' ),
 		icon: 'moon',
 		category: 'widgets',
