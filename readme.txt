@@ -1,14 +1,14 @@
 === Celestial Lunar Phase Widget ===
 Contributors: johnfoo
-Tags: moon phase, astronomy, moonrise, moonset, lunar phase, astronomical dawn, astronomical dusk, gutenberg block
-Requires at least: 5.8
-Tested up to: 6.9
+Tags: moon phase, astronomy, moonrise, moonset, lunar phase
+Requires at least: 6.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.2.0
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Display the current Moon phase with local astronomy calculations, moonrise, moonset, astronomical dawn/dusk, illumination, bundled images, shortcode, and a Gutenberg block.
+Display the Moon phase, illumination, moonrise, moonset, and astronomical twilight using local calculations.
 
 == Description ==
 
@@ -111,6 +111,12 @@ WeatherAPI has been removed. After updating, visit Settings > Celestial Lunar Ph
 WeatherAPI has been removed. After updating, visit Settings > Celestial Lunar Phase Widget and save latitude, longitude, and timezone for your observing location.
 
 == Changelog ==
+
+= 2.2.3 =
+* Updated WordPress compatibility and plugin header metadata.
+* Removed production debug logging flagged by the Plugin Check tool.
+* Added translator context for the localized calculation credit.
+* Limited directory tags and shortened the plugin description.
 
 = 2.2.0 =
 * Added Location Lookup helper using OpenStreetMap Nominatim from the admin settings page.

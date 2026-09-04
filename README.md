@@ -1,6 +1,6 @@
 # Celestial Lunar Phase Widget
 
-A WordPress plugin that displays the current lunar phase with a bundled moon image, phase name, moonrise, moonset, and illumination using WeatherAPI astronomy data.
+A WordPress plugin that displays the current lunar phase with a bundled moon image, phase name, moonrise, moonset, astronomical twilight, and illumination using local astronomy calculations.
 
 This repository is organized for GitHub version control and WordPress plugin development.
 
@@ -38,7 +38,8 @@ lunar_phase_plugin/
 
 ## Requirements
 
-- WordPress 5.8+
+- WordPress 6.0+
+- Tested with WordPress 7.1
 - PHP 7.4+
 - A WeatherAPI key
 

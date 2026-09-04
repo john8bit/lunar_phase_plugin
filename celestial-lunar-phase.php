@@ -3,7 +3,10 @@
  * Plugin Name: Celestial Lunar Phase Widget
  * Plugin URI: https://celestialwebdevelopment.com/lunar-phase-plugin/
  * Description: Display the current lunar phase with bundled moon imagery, moonrise, moonset, astronomical dawn/dusk, and illumination using local astronomy calculations.
- * Version: 2.2.0
+ * Version: 2.2.3
+ * Requires at least: 6.0
+ * Tested up to: 7.1
+ * Requires PHP: 7.4
  * Author: Celestial Web Development
  * Author URI: https://celestialwebdevelopment.com/
  * License: GPLv2 or later
@@ -19,8 +22,8 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 
 	class Celestial_Lunar_Phase_Widget {
 		const OPTION_KEY       = 'lpsw_settings';
-		const TRANSIENT_PREFIX = 'lpsw_v220_';
-		const VERSION          = '2.2.0';
+		const TRANSIENT_PREFIX = 'lpsw_v223_';
+		const VERSION          = '2.2.3';
 
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'register_admin_menu' ) );
@@ -467,7 +470,6 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 				echo '<tr><th scope="row">Dusk</th><td>' . esc_html( $this->format_output_time( $sun['sunset'] ?? '', $settings['time_format'] ?? '12' ) ) . '</td></tr>';
 				echo '</tbody></table>';
 			} catch ( Throwable $e ) {
-				error_log( 'Celestial Lunar Phase Widget diagnostics error: ' . $e->getMessage() );
 				echo '<div class="notice notice-error inline"><p><strong>' . esc_html__( 'Local calculation diagnostic error:', 'celestial-lunar-phase' ) . '</strong> ' . esc_html( $e->getMessage() ) . '</p></div>';
 			}
 		}
@@ -488,7 +490,7 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 			try {
 				return $this->render_widget( $atts );
 			} catch ( Throwable $e ) {
-				return $this->handle_render_exception( $e, 'shortcode' );
+				return $this->handle_render_exception( $e );
 			}
 		}
 
@@ -505,7 +507,7 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 					)
 				);
 			} catch ( Throwable $e ) {
-				return $this->handle_render_exception( $e, 'block' );
+				return $this->handle_render_exception( $e );
 			}
 		}
 
@@ -570,9 +572,7 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 			return '<div class="lpsw-notice">' . esc_html( $message ) . '</div>';
 		}
 
-		private function handle_render_exception( Throwable $e, $context ) {
-			$message = 'Celestial Lunar Phase Widget ' . $context . ' error: ' . $e->getMessage();
-			error_log( $message );
+		private function handle_render_exception( Throwable $e ) {
 			if ( current_user_can( 'manage_options' ) ) {
 				return $this->render_notice( __( 'Celestial Lunar Phase Widget local calculation error: ', 'celestial-lunar-phase' ) . $e->getMessage() );
 			}
@@ -643,12 +643,16 @@ if ( ! class_exists( 'Celestial_Lunar_Phase_Widget' ) ) {
 					'sunrise'        => $sun['sunrise'],
 					'sunset'         => $sun['sunset'],
 					'location_label' => $location_label,
-					'credit'         => sprintf( __( 'Calculated locally by Celestial Web Development for %1$s. Times use %2$s. Dawn/Dusk are astronomical twilight. Results may vary from other services due to calculation and horizon assumptions.', 'celestial-lunar-phase' ), esc_html( $date ), esc_html( $tz ) ),
+					'credit'         => sprintf(
+						/* translators: 1: observation date, 2: timezone identifier. */
+						__( 'Calculated locally by Celestial Web Development for %1$s. Times use %2$s. Dawn/Dusk are astronomical twilight. Results may vary from other services due to calculation and horizon assumptions.', 'celestial-lunar-phase' ),
+						esc_html( $date ),
+						esc_html( $tz )
+					),
 				);
 				set_transient( $key, $data, 12 * HOUR_IN_SECONDS );
 				return $data;
 			} catch ( Throwable $e ) {
-				error_log( 'Celestial Lunar Phase Widget local data error: ' . $e->getMessage() );
 				if ( current_user_can( 'manage_options' ) ) {
 					return new WP_Error( 'lpsw_local_calculation_error', __( 'Local calculation error: ', 'celestial-lunar-phase' ) . $e->getMessage() );
 				}
